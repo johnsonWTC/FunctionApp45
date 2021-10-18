@@ -17,11 +17,9 @@ namespace FunctionApp45
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req)
         {
             string name = req.Query["name"];
-
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             dynamic data = JsonConvert.DeserializeObject(requestBody);
             string responseMessage = "Hey";
-
             return new OkObjectResult(responseMessage);
         }
     }
