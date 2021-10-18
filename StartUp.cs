@@ -7,7 +7,7 @@ using System.Text;
 [assembly: FunctionsStartup(typeof(FunctionApp43.Startup))]
 
 
-namespace FunctionApp43
+namespace FunctionApp45
 {
     class Startup : FunctionsStartup
     {
