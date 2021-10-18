@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-[assembly: FunctionsStartup(typeof(FunctionApp43.Startup))]
+[assembly: FunctionsStartup(typeof(FunctionApp45.Startup))]
 
 
 namespace FunctionApp45
