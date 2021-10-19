@@ -39,10 +39,10 @@ namespace FunctionApp45
             {
                 return $"No user was found with id:  {userID}";
             }
+            var oldName = user.UserName;
             user.UserName = newUserName;
             _userContext.SaveChanges();
-            return $"";
-            throw new NotImplementedException();
+            return $"{oldName} has been updated to {newUserName}";
         }
     }
 }
