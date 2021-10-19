@@ -27,5 +27,9 @@ namespace FunctionApp45
             _crud.AddUser(user);
             return new OkObjectResult($"{user.UserName} was created");
         }
+
+
+
+
     }
 }
