@@ -23,9 +23,9 @@ namespace FunctionApp45
         {
             string name = req.Query["name"];
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            dynamic data = JsonConvert.DeserializeObject(requestBody);
-            string responseMessage = "Hey";
-            return new OkObjectResult(responseMessage);
+            User user = JsonConvert.DeserializeObject<User>(requestBody);
+            _crud.AddUser(user);
+            return new OkObjectResult($"{user.UserName} was created");
         }
     }
 }

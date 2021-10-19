@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace FunctionApp45
@@ -21,8 +22,13 @@ namespace FunctionApp45
             throw new NotImplementedException();
         }
 
-        public string FindUser(int userID)
+        public string FindUserNameByID(int userID)
         {
+            string userName = _userContext.Users.Where(a => a.UserID == userID).FirstOrDefault()?.UserName;
+            if(userName is null)
+            {
+                return $"No user ";
+            }
             throw new NotImplementedException();
         }
 

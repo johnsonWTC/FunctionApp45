@@ -8,7 +8,7 @@ namespace FunctionApp45
     {
         string AddUser(User user);
         string DeleteUser(User user);
-        string FindUser(int userID);
+        string FindUserNameByID(int userID);
         string UpdateUser(string newUserName, int userID);
     }
 }
