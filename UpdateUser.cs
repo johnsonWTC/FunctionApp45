@@ -10,14 +10,21 @@ using Newtonsoft.Json;
 
 namespace FunctionApp45
 {
-    public static class UpdateUser
+    public  class UpdateUser
     {
+        private readonly ICrud _crud;
+        public UpdateUser(ICrud crud)
+        {
+            _crud = crud;
+        }
+
+
         [FunctionName("UpdateUser")]
-        public static async Task<IActionResult> Run(
+        public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "{newUserName}/{id}")] HttpRequest req, string newUserName, int id)
         {
 
-            return new OkObjectResult();
+            return new OkObjectResult(_crud.UpdateUser(newUserName,id));
         }
     }
 }
