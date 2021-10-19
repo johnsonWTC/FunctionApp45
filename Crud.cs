@@ -34,7 +34,9 @@ namespace FunctionApp45
 
         public string UpdateUser(string newUserName, int userID)
         {
-            User User = _userContext.Users.Where(a => a.UserID == userID).FirstOrDefault();
+            User user = _userContext.Users.Where(a => a.UserID == userID).FirstOrDefault();
+            user.UserName = newUserName;
+            _userContext
             throw new NotImplementedException();
         }
     }
