@@ -17,8 +17,6 @@ namespace FunctionApp45
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "FindUserById/{id}")] HttpRequest req, int id)
         {
           
-
-
             return new OkObjectResult(responseMessage);
         }
     }
