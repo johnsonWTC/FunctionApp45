@@ -35,8 +35,13 @@ namespace FunctionApp45
         public string UpdateUser(string newUserName, int userID)
         {
             User user = _userContext.Users.Where(a => a.UserID == userID).FirstOrDefault();
+            if (user is null)
+            {
+                return $"No user was found with id:  {userID}";
+            }
             user.UserName = newUserName;
-            _userContext
+            _userContext.SaveChanges();
+            return userName;
             throw new NotImplementedException();
         }
     }
