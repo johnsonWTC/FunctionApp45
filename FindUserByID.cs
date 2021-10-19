@@ -10,14 +10,22 @@ using Newtonsoft.Json;
 
 namespace FunctionApp45
 {
-    public static class FindUserByID
+    public  class FindUserByID
     {
+
+        private readonly ICrud _crud;
+        public FindUserByID(ICrud crud)
+        {
+            _crud = crud;
+        }
+
+
         [FunctionName("FindUserByID")]
-        public static async Task<IActionResult> Run(
+        public  async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "FindUserById/{id}")] HttpRequest req, int id)
         {
           
-            return new OkObjectResult(responseMessage);
+            return new OkObjectResult(_crud.FindUserNameByID(id));
         }
     }
 }
