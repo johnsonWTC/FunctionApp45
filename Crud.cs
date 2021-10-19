@@ -41,7 +41,7 @@ namespace FunctionApp45
             }
             user.UserName = newUserName;
             _userContext.SaveChanges();
-            return userName;
+            return $"";
             throw new NotImplementedException();
         }
     }
