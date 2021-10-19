@@ -5,11 +5,11 @@ using System.Text;
 
 namespace FunctionApp45
 {
-   public class Crud : ICrud
+    public class Crud : ICrud
     {
         private UserContext _userContext = new UserContext();
 
-       
+
         public string AddUser(User user)
         {
             _userContext.Users.Add(user);
@@ -25,7 +25,7 @@ namespace FunctionApp45
         public string FindUserNameByID(int userID)
         {
             string userName = _userContext.Users.Where(a => a.UserID == userID).FirstOrDefault()?.UserName;
-            if(userName is null)
+            if (userName is null)
             {
                 return $"No user was found with id:  {userID}";
             }
