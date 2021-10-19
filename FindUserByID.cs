@@ -14,8 +14,7 @@ namespace FunctionApp45
     {
         [FunctionName("FindUserByID")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
-            ILogger log)
+            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "{FindUserById}/{id}")] HttpRequest req,)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
 
