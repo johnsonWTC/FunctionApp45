@@ -17,8 +17,6 @@ namespace FunctionApp45
         {
             _crud = crud;
         }
-
-
         [FunctionName("UpdateUser")]
         public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "{newUserName}/{id}")] HttpRequest req, string newUserName, int id)
